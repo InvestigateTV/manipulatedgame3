@@ -57,7 +57,7 @@
 
 .quiz-container .option {
   border: none;
-  padding: 20px 28px;
+  padding: 10px 14px;
   font-size: 18px;
   background: #9EB8EB;
   color: #fff;
@@ -325,7 +325,7 @@
         <br>
         <div class="start-btn-container">
             <div class="start-msg">
-                <p>Test your skills at identifying <br> AI generated images</p>
+                <p>Can you find what was changed <br> in these images using generative AI?</p>
                 <br>
             </div>
             <button class="start-btn">Start Quiz</button>
@@ -333,7 +333,7 @@
     
 
     <div class="quiz-container">
-      <h1>Is it AI?</h1>
+      <h1>Which is AI?</h1>
       <div class="question-number"></div>
       <img id="question-image" class="question" src="" alt="Question Image">
       <div class="options"></div>
@@ -353,35 +353,31 @@
 <script>
   let quizData = [
     {
-      question: "https://raw.githubusercontent.com/InvestigateTV/manipulatedgame/main/images/Manipulated%20Game-1.png",
-      options: ["AI", "Not AI"],
-      correct: "AI",
+      question: "https://raw.githubusercontent.com/InvestigateTV/manipulatedgame3/main/images/Manipulated_Game_3-1.png",
+      options: ["Streetlight", "Walk Signal", "Water Tower Place Building", "Clouds"],
+      correct: "Walk Signal",
     },
     {
-      question: "https://raw.githubusercontent.com/InvestigateTV/manipulatedgame/main/images/Manipulated%20Game-2.png",
-      options: ["AI", "Not AI"],
-      correct: "Not AI",
+      question: "https://raw.githubusercontent.com/InvestigateTV/manipulatedgame3/main/images/Manipulated_Game_3-2.png",
+      options: ["Fire Hydrant", "Trees", "Trash Can", "Yellow Firetruck"],
+      correct: "Trash Can",
     },
     {
-      question: "https://raw.githubusercontent.com/InvestigateTV/manipulatedgame/main/images/Manipulated%20Game-3.png",
-      options: ["AI", "Not AI"],
-      correct: "AI",
+      question: "https://raw.githubusercontent.com/InvestigateTV/manipulatedgame3/main/images/Manipulated_Game_3-3.png",
+      options: ["Cherry", "Flower", "Menu", "Floor Rugs"],
+      correct: "Cherry",
     },
     {
-      question: "https://raw.githubusercontent.com/InvestigateTV/manipulatedgame/main/images/Manipulated%20Game-4.png",
-      options: ["AI", "Not AI"],
-      correct: "Not AI",
+      question: "https://raw.githubusercontent.com/InvestigateTV/manipulatedgame3/main/images/Manipulated_Game_3-4.png",
+      options: ["Billboard", "Bus", "Tall Geometric Buildings", "Construction Crane"],
+      correct: "Construction Crane",
     },
     {
-      question: "https://raw.githubusercontent.com/InvestigateTV/manipulatedgame/main/images/Manipulated%20Game-5.png",
-      options: ["AI", "Not AI"],
-      correct: "Not AI",
+      question: "https://raw.githubusercontent.com/InvestigateTV/manipulatedgame3/main/images/Manipulated_Game_3-5.png",
+      options: ["Fence", "Forest Background", "Dead Tree  Limbs", "Water Rapids"],
+      correct: "Fence",
     },
-    {
-      question: "https://raw.githubusercontent.com/InvestigateTV/manipulatedgame/main/images/Manipulated%20Game-6.png",
-      options: ["AI", "Not AI"],
-      correct: "AI",
-    },
+  
   ];
 
   const quizContainer = document.querySelector(".quiz-container");
