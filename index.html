@@ -235,7 +235,7 @@
 }
 
 .start-btn-container .start-img img{
-	display: block;
+	display: flex;
     max-width: 100%;
     height: auto;
     margin: 0 auto;
@@ -318,14 +318,18 @@
 
   
   <body style="background-color:#000000;">
-    	<div class="start-img">
-      <img src="https://raw.githubusercontent.com/InvestigateTV/manipulatedgame3/main/images/manipulated_matchup.png" alt="Illustration of a hand below a glowing set of lines and dots designed to represent artificial intelligence. The words manipulated matchup are printed above the illustration" width=100% margin=0 ></div>
-      <br>
-     <div class="start-btn-container">
-     <div class="start-msg">
-     <p>Find which item in each photo <br> was added using generative AI</p>
-      <br></div></div><div class="start-btn-container">
-      <button class="start-btn">Start Quiz</button></div>
+    <div id="start-screen-wrapper">
+        <div class="start-img">
+            <img src="https://raw.githubusercontent.com/InvestigateTV/manipulatedgame3/main/images/manipulated_matchup.png" alt="Illustration of a hand below a glowing set of lines and dots designed to represent artificial intelligence. The words manipulated matchup are printed above the illustration" width=100% margin=0 >
+        </div>
+        <br>
+        <div class="start-btn-container">
+            <div class="start-msg">
+                <p>Test your skills at identifying <br> AI generated images</p>
+                <br>
+            </div>
+            <button class="start-btn">Start Quiz</button>
+        </div></div>
     
 
     <div class="quiz-container">
@@ -341,7 +345,7 @@
     <button class="return-btn">Exit to the <span class="special-font"> mAnIpulated</span> Homepage</button>
 </div>
    	<div class="footer-image-container">
-    	<img src="https://raw.githubusercontent.com/InvestigateTV/manipulatedgame1/main/images/GTV-Clear-Logomark-RGB-color.png" alt="Gray Media Logo: Colorful partial circles arranged to form the letter G">
+    	<img src="https://raw.githubusercontent.com/InvestigateTV/manipulatedgame3/main/images/GTV-Clear-Logomark-RGB-color.png" alt="Gray Media Logo: Colorful partial circles arranged to form the letter G">
 </div>
   </body>
 
@@ -497,12 +501,18 @@
       createQuestion();
     }
   };
+	const returnBtn = document.querySelector(".return-btn"); // Selects the button with the class 'return-btn'
+
+  returnBtn.addEventListener("click", () => {
+    window.location.href = "https://www.investigatetv.com/page/manipulated/"; 
+  });
+
 
   nextBtn.addEventListener("click", displayNextQuestion);
 
   startBtn.addEventListener("click", () => {
-    startBtnContainer.style.display = "none";
-    quizContainer.style.display = "block";
+  document.getElementById("start-screen-wrapper").style.display = "none";
+  quizContainer.style.display = "block";
     resetLocalStorage();
     createQuestion();
   });
