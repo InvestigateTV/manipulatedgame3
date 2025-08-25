@@ -120,6 +120,13 @@
   border: 3px solid #b92b2b
 }
 
+/* New class for revealing the correct answer without the 'Correct!' text */
+.option.correct-revealed {
+  background: #A3C76E;
+  color: #222;
+  border: 3px solid #415C1D;
+}
+
 .quiz-container .next-btn,
 .quiz-result .retake-btn {
   background: #12326D;
@@ -443,6 +450,12 @@
       e.target.classList.add("correct");
     } else {
       e.target.classList.add("incorrect");
+      const allOptions = document.querySelectorAll(".option");
+      allOptions.forEach((option) => {
+        if (option.textContent === correctAnswer) {
+          option.classList.add("correct-revealed"); // Apply the new class here
+        }
+      });
     }
 
     localStorage.setItem(`userAnswer_${questionNumber}`, userAnswer);
